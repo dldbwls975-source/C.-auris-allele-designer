@@ -1,0 +1,12 @@
+name: Keep Streamlit App Alive
+
+on:
+  schedule:
+    - cron: '0 */12 * * *' # 12시간마다 실행
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Streamlit App
+        run: curl -I https://c-auris-allele-designer.streamlit.app/ # 본인 앱 주소로 수정
